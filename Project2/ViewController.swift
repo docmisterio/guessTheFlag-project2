@@ -42,17 +42,19 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
-        print(scoreCount)
+        var message: String
         
         if sender.tag == correctAnswer {
             title = "Correct"
+            message = "Your score is \(score)"
             score += 1
         } else {
             title = "Wrong"
+            message = "The correct answer was \(countries[correctAnswer].localizedCapitalized), Your score is \(score)"
             score -= 1
         }
         
-        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let acGameOver = UIAlertController(title: "Game Over", message: "That's the game. You've played 10 times. Your final score is \(score)", preferredStyle: .alert)
         
         if scoreCount == 10 {
