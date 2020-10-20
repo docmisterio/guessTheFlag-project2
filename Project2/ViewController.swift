@@ -5,14 +5,15 @@ class ViewController: UIViewController {
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
     
-    var countries = [String]()
+//    var countries = [String]()
+    var countries = ["estonia", "france", "germany", "ireland", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+
     var score = 0
     var correctAnswer = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        countries += ["estonia", "france", "germany", "ireland", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
@@ -48,8 +49,8 @@ class ViewController: UIViewController {
         }
         
         let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
-        
-        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+            
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
         present(ac, animated: true)
     }
     
