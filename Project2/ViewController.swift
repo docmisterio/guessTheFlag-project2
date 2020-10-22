@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "score", style: .plain, target: self, action: #selector(showScoreTapped))
+        
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
         button3.layer.borderWidth = 1
@@ -62,6 +64,13 @@ class ViewController: UIViewController {
             ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
             present(ac, animated: true)
         }
+    }
+    
+    @objc func showScoreTapped() {
+        let scoreAlert = UIAlertController(title: "Score", message: "Your Score is \(score).", preferredStyle: .alert)
+        scoreAlert.addAction(UIAlertAction(title: "mmmk", style: .default, handler: nil))
+        
+        present(scoreAlert, animated: true)
     }
 }
 
