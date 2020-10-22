@@ -5,13 +5,11 @@ class ViewController: UIViewController {
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
     
-//    var countries = [String]()
     var countries = ["estonia", "france", "germany", "ireland", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
-
+    
     var score = 0
     var correctAnswer = 0
     var scoreCount = 0
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +21,7 @@ class ViewController: UIViewController {
         button1.layer.borderColor =  UIColor.lightGray.cgColor
         button2.layer.borderColor =  UIColor.lightGray.cgColor
         button3.layer.borderColor =  UIColor.lightGray.cgColor
-
+        
         askQuestion()
     }
     
@@ -32,12 +30,12 @@ class ViewController: UIViewController {
         correctAnswer = Int.random(in: 0...2)
         
         scoreCount += 1
-
+        
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        title = "\(countries[correctAnswer].uppercased())? | Score: \(score)"
+        title = "\(countries[correctAnswer].uppercased())?"
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
@@ -65,9 +63,5 @@ class ViewController: UIViewController {
             present(ac, animated: true)
         }
     }
-    
-    
-    
-
 }
 
