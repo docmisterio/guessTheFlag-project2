@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             score += 1
         } else {
             title = "Wrong"
-            message = "The correct answer was \(countries[correctAnswer].localizedCapitalized), Your score is \(score)"
+            message = "The correct answer was \(countries[correctAnswer].localizedCapitalized). Your score is \(score)"
             score -= 1
         }
         
