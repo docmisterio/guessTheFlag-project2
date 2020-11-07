@@ -14,17 +14,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "score", style: .plain, target: self, action: #selector(showScoreTapped))
-        
-        button1.layer.borderWidth = 1
-        button2.layer.borderWidth = 1
-        button3.layer.borderWidth = 1
-        
-        button1.layer.borderColor =  UIColor.lightGray.cgColor
-        button2.layer.borderColor =  UIColor.lightGray.cgColor
-        button3.layer.borderColor =  UIColor.lightGray.cgColor
+        setRightBarButtonItem()
+        setUpButtons()
         
         askQuestion()
+    }
+    
+    func setRightBarButtonItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "score", style: .plain, target: self, action: #selector(showScoreTapped))
+    }
+    
+    func setUpButtons() {
+        let buttons = [button1, button2, button3]
+        
+        for button in buttons {
+            button?.layer.borderWidth = 1
+            button?.layer.borderColor = UIColor.lightGray.cgColor
+        }
     }
     
     func askQuestion(action: UIAlertAction! = nil) {
