@@ -7,9 +7,9 @@ class ViewController: UIViewController {
     
     var countries = ["estonia", "france", "germany", "ireland", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
     
-    var score = 0
+    var score         = 0
     var correctAnswer = 0
-    var scoreCount = 0
+    var scoreCount    = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,6 @@ class ViewController: UIViewController {
     func askQuestion(action: UIAlertAction! = nil) {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
-        
         scoreCount += 1
         
         button1.setImage(UIImage(named: countries[0]), for: .normal)
